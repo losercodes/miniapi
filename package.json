@@ -1,0 +1,60 @@
+{
+    "name": "miniapi-framework",
+    "version": "1.2.1",
+    "description": "The smallest API framework (1KB) with zero dependencies",
+    "keywords": [
+      "api",
+      "framework",
+      "http",
+      "rest",
+      "lightweight",
+      "minimal",
+      "express",
+      "alternative"
+    ],
+    "homepage": "https://github.com/losecodes/miniapi#readme",
+    "bugs": {
+      "url": "https://github.com/losecodes/miniapi/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/losecodes/miniapi.git"
+    },
+    "license": "MIT",
+    "author": "Aman Pandey",
+    "type": "module",
+    "main": "dist/miniapi.cjs",
+    "module": "dist/miniapi.mjs",
+    "types": "dist/miniapi.d.ts",
+    "exports": {
+      "import": "./dist/miniapi.mjs",
+      "require": "./dist/miniapi.cjs",
+      "types": "./dist/miniapi.d.ts"
+    },
+    "directories": {
+      "example": "examples",
+      "test": "test"
+    },
+    "files": [
+      "dist",
+      "README.md",
+      "LICENSE"
+    ],
+    "scripts": {
+      "build": "esbuild src/miniapi.js --bundle --format=cjs --platform=node --outfile=dist/miniapi.cjs && esbuild src/miniapi.js --bundle --format=esm --platform=node --outfile=dist/miniapi.mjs && cp src/miniapi.d.ts dist/",
+      "test": "node test/test.js",
+      "benchmark": "node test/benchmark.js",
+      "lint": "eslint src --fix",
+      "format": "prettier --write src",
+      "prepublishOnly": "npm run build"
+    },
+    "devDependencies": {
+      "esbuild": "^0.18.20",
+      "eslint": "^8.0.0",
+      "prettier": "^3.0.0"
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
+  
